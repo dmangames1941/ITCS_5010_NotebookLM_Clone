@@ -1,0 +1,16 @@
+gradio>=4.20.0
+
+python-dotenv
+langchain
+langchain-groq
+langchain-text-splitters
+langchain-community
+poml
+
+chromadb
+sentence-transformers
+
+pypdf
+python-pptx
+beautifulsoup4
+requests

@@ -1,0 +1,28 @@
+{
+  "notebooks": {
+    "nb_1791424035555": {
+      "id": "nb_1791424035555",
+      "name": "ML",
+      "create_at": "2026-10-07T21:47:15.641010",
+      "sources": [
+        {
+          "source_id": "src_1791424089945",
+          "name": "URL: www.geeksforgeeks.org",
+          "type": "url",
+          "chunk_count": 10,
+          "added_at": "2026-10-07T21:48:09.945237"
+        }
+      ],
+      "chat_history": [],
+      "artifacts": {}
+    },
+    "nb_1791469443809": {
+      "id": "nb_1791469443809",
+      "name": "nlp",
+      "create_at": "2026-10-08T10:24:03.878567",
+      "sources": [],
+      "chat_history": [],
+      "artifacts": {}
+    }
+  }
+}
