@@ -1,5 +1,4 @@
 import os
-import gradio as gr
 import gradio_client.utils
 _orig_get_type = gradio_client.utils.get_type
 
@@ -9,6 +8,9 @@ def _patched_get_type(schema):
     return _orig_get_type(schema)
 
 gradio_client.utils.get_type = _patched_get_type
+
+import gradio as gr
+import spaces
 
 from dotenv import load_dotenv
 import tempfile
@@ -147,6 +149,7 @@ def handle_file_upload(file_obj, active_id):
     except Exception as e:
         return f"Error processing file: {str(e)}", ""
 
+@spaces.GPU
 def handle_url_ingest(url_input, active_id):
     """Scrapes URL text content and adds to Chroma vector store."""
     if not active_id:
@@ -232,7 +235,7 @@ def handle_generate_quiz(active_id):
     return quiz_text, file_path
 
 # Gradio UI Layout
-with gr.Blocks(title="ITCS 5010 NotebookLM Clone Project", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="ITCS 5010 NotebookLM Clone Project") as demo:
     active_notebook_id = gr.State()
     gr.Markdown("ITCS 5010 NotebookLM Clone Project")
     gr.Markdown("A full-stack RAG application for document analysis, multisource Q&A, and study artifact generation.")
