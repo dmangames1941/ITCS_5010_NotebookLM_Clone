@@ -149,7 +149,6 @@ def handle_file_upload(file_obj, active_id):
     except Exception as e:
         return f"Error processing file: {str(e)}", ""
 
-@spaces.GPU
 def handle_url_ingest(url_input, active_id):
     """Scrapes URL text content and adds to Chroma vector store."""
     if not active_id:
@@ -174,6 +173,7 @@ def handle_url_ingest(url_input, active_id):
     except Exception as e:
         return f"Error parsing URL: {str(e)}", ""
 
+@spaces.GPU
 def handle_rag_chat(user_message, history, active_id, retrieval_method):
     if history is None:
         history = []
