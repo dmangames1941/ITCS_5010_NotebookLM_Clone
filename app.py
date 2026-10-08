@@ -1,5 +1,15 @@
 import os
 import gradio as gr
+import gradio_client.utils
+_orig_get_type = gradio_client.utils.get_type
+
+def _patched_get_type(schema):
+    if isinstance(schema, bool):
+        return "boolean"
+    return _orig_get_type(schema)
+
+gradio_client.utils.get_type = _patched_get_type
+
 from dotenv import load_dotenv
 import tempfile
 
